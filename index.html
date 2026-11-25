@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d18">
+  <title>BOMB RELAY - Đấu Trường</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">✦</div>
+        <div>
+          <h2>BOMB RELAY</h2>
+          <small>REFLEX & CODE BREAKER ARENA</small>
+        </div>
+      </div>
+      <div class="online"><span></span> LOCAL ARENA</div>
+    </header>
+
+    <main>
+      <!-- MÀN HÌNH CÀI ĐẶT -->
+      <section id="setup" class="panel setup">
+        <div class="eyebrow">WELCOME TO THE ARENA</div>
+        <h1>ĐẤU TRƯỜNG<br><span>CHUYỀN BOM</span></h1>
+        <p class="muted">
+          Giải mã thật nhanh. Chuyền bom thật khéo.
+          Trở thành người sống sót cuối cùng!
+        </p>
+
+        <label>SỐ NGƯỜI CHƠI</label>
+        <div class="player-count">
+          <button class="count active" data-count="2">2</button>
+          <button class="count" data-count="3">3</button>
+          <button class="count" data-count="4">4</button>
+        </div>
+
+        <div id="nameFields" class="name-fields"></div>
+
+        <button id="startBtn" class="primary">
+          BẮT ĐẦU TRẬN ĐẤU <span>→</span>
+        </button>
+        <p class="note">Chơi luân phiên trên cùng một thiết bị.</p>
+      </section>
+
+      <!-- MÀN HÌNH GAME -->
+      <section id="game" class="hidden">
+        <div class="game-heading">
+          <div>
+            <div class="eyebrow">ROUND <span id="round">1</span></div>
+            <h2 id="phaseTitle">BOMB RELAY</h2>
+          </div>
+          <button id="restartBtn" class="secondary">↻ Chơi lại</button>
+        </div>
+
+        <div class="timer-card">
+          <div class="timer-label">BOMB COUNTDOWN</div>
+          <div id="timer">180.0</div>
+          <div class="timer-track">
+            <div id="timerBar"></div>
+          </div>
+          <p id="timerHint">Hãy nhanh tay!</p>
+        </div>
+
+        <div id="players" class="players"></div>
+
+        <!-- MÀN HÌNH CHUYỂN LƯỢT -->
+        <div id="passScreen" class="panel challenge">
+          <div class="big-icon">💣</div>
+          <div class="eyebrow">BOMB HOLDER</div>
+          <h3 id="holderTitle">Người chơi 1 đang giữ bom</h3>
+          <p class="muted">
+            Chuyển thiết bị cho người đang giữ bom.
+            Nhấn nút bên dưới khi đã sẵn sàng.
+          </p>
+          <button id="readyBtn" class="primary">
+            TÔI ĐÃ SẴN SÀNG
+          </button>
+        </div>
+
+        <!-- MÀN HÌNH GIẢI MÃ -->
+        <div id="puzzleScreen" class="panel challenge hidden">
+          <div class="big-icon">🔐</div>
+          <div class="eyebrow">CODE BREAKER</div>
+          <h3>Phá mật mã bí ẩn</h3>
+          <p class="muted">
+            Tìm mã gồm 4 chữ số khác nhau.
+            Bạn có tối đa 10 lần đoán.
+          </p>
+
+          <div class="code-inputs">
+            <input maxlength="1" inputmode="numeric" aria-label="Số 1">
+            <input maxlength="1" inputmode="numeric" aria-label="Số 2">
+            <input maxlength="1" inputmode="numeric" aria-label="Số 3">
+            <input maxlength="1" inputmode="numeric" aria-label="Số 4">
+          </div>
+
+          <button id="guessBtn" class="primary">
+            KIỂM TRA MẬT MÃ
+          </button>
+
+          <p id="feedback" class="feedback">
+            Hãy nhập mã của bạn.
+          </p>
+
+          <div id="history" class="history"></div>
+        </div>
+
+        <!-- KẾT QUẢ -->
+        <div id="resultScreen" class="panel challenge hidden">
+          <div class="big-icon">🏆</div>
+          <div class="eyebrow">GAME OVER</div>
+          <h3 id="resultTitle">Chiến thắng!</h3>
+          <p id="resultText" class="muted"></p>
+          <div id="finalScores" class="final-scores"></div>
+          <button id="againBtn" class="primary">
+            TRỞ LẠI SẢNH CHỜ
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>BOMB RELAY <span>•</span> THINK FAST, PLAY SMART</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
